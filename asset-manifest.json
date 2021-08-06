@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Trivia_React/static/css/main.530186bf.chunk.css",
-    "main.js": "/Trivia_React/static/js/main.eff3a9de.chunk.js",
-    "main.js.map": "/Trivia_React/static/js/main.eff3a9de.chunk.js.map",
-    "runtime-main.js": "/Trivia_React/static/js/runtime-main.004d0156.js",
-    "runtime-main.js.map": "/Trivia_React/static/js/runtime-main.004d0156.js.map",
-    "static/js/2.307b3fd6.chunk.js": "/Trivia_React/static/js/2.307b3fd6.chunk.js",
-    "static/js/2.307b3fd6.chunk.js.map": "/Trivia_React/static/js/2.307b3fd6.chunk.js.map",
-    "static/js/3.cc7b567c.chunk.js": "/Trivia_React/static/js/3.cc7b567c.chunk.js",
-    "static/js/3.cc7b567c.chunk.js.map": "/Trivia_React/static/js/3.cc7b567c.chunk.js.map",
+    "main.js": "/Trivia_React/static/js/main.a0c730fd.chunk.js",
+    "main.js.map": "/Trivia_React/static/js/main.a0c730fd.chunk.js.map",
+    "runtime-main.js": "/Trivia_React/static/js/runtime-main.09cb258c.js",
+    "runtime-main.js.map": "/Trivia_React/static/js/runtime-main.09cb258c.js.map",
+    "static/js/2.d3c8b23d.chunk.js": "/Trivia_React/static/js/2.d3c8b23d.chunk.js",
+    "static/js/2.d3c8b23d.chunk.js.map": "/Trivia_React/static/js/2.d3c8b23d.chunk.js.map",
+    "static/js/3.ec43ad6c.chunk.js": "/Trivia_React/static/js/3.ec43ad6c.chunk.js",
+    "static/js/3.ec43ad6c.chunk.js.map": "/Trivia_React/static/js/3.ec43ad6c.chunk.js.map",
     "index.html": "/Trivia_React/index.html",
     "static/css/main.530186bf.chunk.css.map": "/Trivia_React/static/css/main.530186bf.chunk.css.map",
-    "static/js/2.307b3fd6.chunk.js.LICENSE.txt": "/Trivia_React/static/js/2.307b3fd6.chunk.js.LICENSE.txt"
+    "static/js/2.d3c8b23d.chunk.js.LICENSE.txt": "/Trivia_React/static/js/2.d3c8b23d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.004d0156.js",
-    "static/js/2.307b3fd6.chunk.js",
+    "static/js/runtime-main.09cb258c.js",
+    "static/js/2.d3c8b23d.chunk.js",
     "static/css/main.530186bf.chunk.css",
-    "static/js/main.eff3a9de.chunk.js"
+    "static/js/main.a0c730fd.chunk.js"
   ]
 }
