@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.top-50 {
+  top: 20%!important;
+}
+.progress {
+  margin: 1%;
+}
+.card-footer{
+  margin: 1%;
+}

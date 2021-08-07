@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Modal } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 class Menu extends Component {
     constructor(props) {
@@ -22,15 +22,15 @@ class Menu extends Component {
     render() {
         return (
         <form onSubmit={this.hideModal}>
-        <Modal show={this.state.show}>
-            <Modal.Header>
-            <Modal.Title>Hi</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>The body</Modal.Body>
-            <Modal.Footer>
+        <Card show={this.state.show}>
+            <Card.Header>
+            <Card.Title>Trivia</Card.Title>
+            </Card.Header>
+            <Card.Body>Press Start to Play</Card.Body>
+            <Card.Footer>
                 <button onClick={this.props.start}>Start</button>
-            </Modal.Footer>
-        </Modal>
+            </Card.Footer>
+        </Card>
         </form>
         );
     }
