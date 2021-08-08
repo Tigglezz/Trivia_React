@@ -11,13 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.top-50 {
-  top: 20%!important;
+@media only screen and (min-width: 800px) and (min-width: 1050px) {
+  .top-50 {
+    top: 20%!important;
+  }
 }
 .progress {
   margin: 1%;
 }
-.card-footer{
-  margin: 1%;
+.progress {
+  margin: 2%!important;
+  margin-top: 0!important;
+}
+.dropdown-menu {
+  font-size: 70%!important;
+}
+.dropdown-toggle{
+  width: 100%;
+}
+.card{
+  background-color: #95c9ffa8!important;
 }
