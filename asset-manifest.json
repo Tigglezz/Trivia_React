@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Trivia_React/static/css/main.a97d9ddc.chunk.css",
-    "main.js": "/Trivia_React/static/js/main.806e4a85.chunk.js",
-    "main.js.map": "/Trivia_React/static/js/main.806e4a85.chunk.js.map",
+    "main.css": "/Trivia_React/static/css/main.5f423312.chunk.css",
+    "main.js": "/Trivia_React/static/js/main.1df90c6f.chunk.js",
+    "main.js.map": "/Trivia_React/static/js/main.1df90c6f.chunk.js.map",
     "runtime-main.js": "/Trivia_React/static/js/runtime-main.cc890f30.js",
     "runtime-main.js.map": "/Trivia_React/static/js/runtime-main.cc890f30.js.map",
     "static/css/2.7d020e43.chunk.css": "/Trivia_React/static/css/2.7d020e43.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.5bcbbc02.chunk.js.map": "/Trivia_React/static/js/3.5bcbbc02.chunk.js.map",
     "index.html": "/Trivia_React/index.html",
     "static/css/2.7d020e43.chunk.css.map": "/Trivia_React/static/css/2.7d020e43.chunk.css.map",
-    "static/css/main.a97d9ddc.chunk.css.map": "/Trivia_React/static/css/main.a97d9ddc.chunk.css.map",
+    "static/css/main.5f423312.chunk.css.map": "/Trivia_React/static/css/main.5f423312.chunk.css.map",
     "static/js/2.6dd6ef47.chunk.js.LICENSE.txt": "/Trivia_React/static/js/2.6dd6ef47.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cc890f30.js",
     "static/css/2.7d020e43.chunk.css",
     "static/js/2.6dd6ef47.chunk.js",
-    "static/css/main.a97d9ddc.chunk.css",
-    "static/js/main.806e4a85.chunk.js"
+    "static/css/main.5f423312.chunk.css",
+    "static/js/main.1df90c6f.chunk.js"
   ]
 }
