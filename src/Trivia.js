@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import { Button, Card, Spinner, ProgressBar, Badge} from 'react-bootstrap';
+import { Button, Card, Spinner, ProgressBar} from 'react-bootstrap';
+import Menu from './Menu';
 import { decode } from 'he';
 
 class Trivia extends Component {
     constructor(props){
         super(props)
         this.state = {
-            categoryID: 0,
+            start: false,
             roundEnd: false,
             options: [],
             playerResponse: "",
@@ -17,12 +18,13 @@ class Trivia extends Component {
           };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.start = this.start.bind(this)
         this.startRound = this.startRound.bind(this)
     }
 
     componentDidMount() {
-      // Get cat Id then questions set of 10 for round
-      this.getCategoryID();
+      // Get questions set of 10 for round
+      this.getQuestions();
     }
 
     componentDidUpdate(prevState, prevProps) {
@@ -34,30 +36,10 @@ class Trivia extends Component {
       
     }
 
-    getCategoryID = async () => {
-      // Category lookup https://opentdb.com/api_category.php
-      fetch("https://opentdb.com/api_category.php")
-      .then(res => res.json())
-      .then(
-      (res) => {
-          for (let index in res.trivia_categories){
-          let cat = res.trivia_categories[index];
-          
-          if(cat.name === this.props.category){
-              this.setState({
-                  categoryID: cat.id
-              }, () => {
-                  this.getQuestions()
-              });
-          }
-      }
-      });
-  }
-
     getQuestions = async () => {
       // Get questions set of 10 for round
       // Reset questions
-      fetch(`https://opentdb.com/api.php?amount=10&category=${this.state.categoryID}&type=multiple`)
+      fetch("https://opentdb.com/api.php?amount=10&type=multiple")
       .then(res => res.json())
       .then(
       (res) => {
@@ -76,13 +58,22 @@ class Trivia extends Component {
       })
     }
 
+    start() {
+      // Start
+      this.setState( { start: true } )
+
+      // Set answers
+      this.setAnswers()
+    }
+
+
     // Handle player answer
     handleSubmit = async (event) => {
       event.preventDefault(); //stop refresh    
       // Increase score if correct
       if(event.target.value === this.state.questions[this.state.turn].correct_answer)
       {
-        this.setState( { score: this.state.score + 1 } )
+        await this.setState( { score: this.state.score + 1 } )
       }
 
       this.setState({
@@ -99,12 +90,12 @@ class Trivia extends Component {
       let answer = this.state.questions[index].correct_answer
       let opt = [answer].concat(this.state.questions[index].incorrect_answers)
 
-      //shuffle and set options
-      await this.shuffleArray(opt)
       this.setState({
-        options: opt,
+        isLoaded: true,
       }, () => {
-        this.setState( { isLoaded: true } )
+        //shuffle and set options
+        this.shuffleArray(opt)
+        this.setState( { options: opt } )
       });
       
     }
@@ -142,7 +133,10 @@ class Trivia extends Component {
           </>
         )
       } else {
-        if(this.state.turn === 10){
+        if(!this.state.start){
+          return <Menu start = {this.start}/>
+        }
+        else if(this.state.turn === 10){
           return (    
             <> 
             <Card id="endRoundContainer">
@@ -161,12 +155,10 @@ class Trivia extends Component {
             <Card id="trivia_container">
               <Card.Body id="question">
                 <Card.Title>{ decode(this.state.questions[this.state.turn].question) }</Card.Title>
-                  <Badge className="position-absolute top-0 start-0 translate-middle bg-success">{this.state.score}</Badge>
-                  <Badge className="position-absolute top-0 start-100 translate-middle bg-primary">{this.state.questions[this.state.turn].difficulty}</Badge>
+                  <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-secondary">{this.state.score} <span class="visually-hidden">unread messages</span></span>
                 <Card.Subtitle>
                   {this.state.questions[this.state.turn].category}<br/>
-                  {this.props.timer}<br/>
-                  {this.props.difficulty}
+                  {this.state.questions[this.state.turn].difficulty}
                 </Card.Subtitle>
               </Card.Body>
               <Card.Footer className="d-grid gap-2">
